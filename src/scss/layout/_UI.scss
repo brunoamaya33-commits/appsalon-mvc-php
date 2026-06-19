@@ -1,0 +1,68 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-app {
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        min-height: 100vh;
+    }
+
+    .imagen {
+        height: 20rem;
+        background-image: url(../img/1.jpg);
+        background-size: cover;
+        background-position: center center; 
+
+        @include m.tablet {
+            height: auto;
+        }
+    }
+
+    .app {
+    width: 95%;
+    margin: 0 auto;
+    padding: 3rem 0;
+    max-height: 100vh;           /* Evita que crezca demasiado */
+    overflow-y: auto;            /* Solo muestra scroll vertical cuando sea necesario */
+    overflow-x: hidden;          /* Oculta scroll horizontal innecesario */
+
+    @include m.tablet {
+        padding: 3rem 2rem;
+    }
+}
+}
+
+.barra {
+    margin: v.$separacion 0;
+    padding: 1rem 0;
+
+    @include m.tablet {
+        display: flex;
+        justify-content: space-between;   /* Esto empuja el botón a la derecha */
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .boton {
+        @include m.boton(v.$negro, v.$blanco);
+        margin: 0;
+        white-space: nowrap;   /* Evita que el texto se corte */
+    }
+}
+
+.barra-servicios {
+    margin-bottom: v.$separacion;
+
+    @include m.tablet {
+        display: flex;
+        justify-content: center;        /* Centrado */
+        gap: 5rem;                    /* Espacio entre botones */
+        flex-wrap: wrap;                /* Se acomodan si la pantalla es muy chica */
+    }
+
+    .boton {
+        margin: 0 0 1rem 0;                      /* Reseteamos márgenes */
+        white-space: nowrap;
+    }
+}
