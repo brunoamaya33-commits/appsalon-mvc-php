@@ -1,6 +1,8 @@
 # Dependencias PHP
 /vendor/
 
+vendor.zip
+
 # Variables de entorno y credenciales
 .env
 
