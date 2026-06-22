@@ -1,3 +1,23 @@
-node_modules
-vendor
-includes/.env
+# Dependencias PHP
+/vendor/
+
+# Variables de entorno y credenciales
+.env
+
+# Dependencias Node
+/node_modules/
+
+# Logs
+*.log
+
+# Archivos temporales
+/tmp/
+/cache/
+
+# Configuración de editores
+.vscode/
+.idea/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
